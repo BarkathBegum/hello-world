@@ -1,0 +1,40 @@
+//https://www.w3schools.com/js/tryit.asp?filename=tryjs_async3
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript async / await</h2>
+
+<h1 id="demo"></h1>
+
+<script>
+function promiseFunc(singleimage)
+{
+return new Promise(function(resolve, reject) {
+
+// some code (try to change x to 5)
+
+  if (singleimage !== '') {
+    resolve(singleimage);
+  } else {
+    reject("Error");
+  }
+});
+}
+
+//let myPromise = promiseFunc(4);
+
+var finalResult;
+async function myDisplay(argVal) {
+
+finalResult = await promiseFunc(argVal);
+  document.getElementById("demo").innerHTML = finalResult;
+}
+
+myDisplay('blobURL');
+</script>
+
+</body>
+</html>
+
